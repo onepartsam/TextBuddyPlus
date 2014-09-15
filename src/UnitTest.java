@@ -108,5 +108,25 @@ public class UnitTest {
 		
 		assertEquals(test, textBuddy.findText("D"));
 	}
+	
+
+	
+	@Test
+	public void testFindAdvance() {
+		
+		TextBuddy textBuddy = new TextBuddy(new String[0]);
+		textBuddy.addText("Samuel");
+		textBuddy.addText("Muzamir");
+		textBuddy.addText("Candiie");
+		textBuddy.addText("Jason");
+		
+		LinkedList<String> test = new LinkedList<String>();
+		test.add("Samuel");
+		test.add("Muzamir");
+		test.add("Candiie");
+		test.add("Jason");
+		
+		assertEquals(test, textBuddy.findText("a"));
+	}
 
 }
