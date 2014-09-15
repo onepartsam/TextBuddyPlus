@@ -68,5 +68,18 @@ public class UnitTest {
 		
 		assertEquals(test, textBuddy.getTexts());
 	}
+	
+	
+	@Test
+	public void testFindBasic() {
+		
+		TextBuddy textBuddy = new TextBuddy(new String[0]);
+		
+		textBuddy.findText("");
+		
+		LinkedList<String> test = new LinkedList<String>();
+		
+		assertEquals(test, textBuddy.getTexts());
+	}
 
 }

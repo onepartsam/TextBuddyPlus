@@ -24,6 +24,7 @@ public class TextBuddy {
 	private String MESSAGE_CLEAR_SUCCESSFUL = "Cleared successfully.\n";
 	private String MESSAGE_SORT_SUCCESSFUL = "Sorted successfully.\n";
 	private String MESSAGE_DISPLAY_UNSUCCESSFUL = "Nothing to display...\n";
+	private String MESSAGE_FIND_UNSUCCESSFUL = "Cannot find any text with the keyword \"%s\"\n";
 	private String MESSAGE_SAVE_SUCCESSFUL = "%s has been updated.\n";
 	private String MESSAGE_SAVE_LINE_FORMAT = "%d. %s\n";
 	private String MESSAGE_ERROR = "Error: %s\n";
@@ -150,17 +151,28 @@ public class TextBuddy {
 
 
 
-	public void findText(String keyword) {
+	public LinkedList<String> findText(String keyword) {
 		
 		keyword = keyword.trim();
+		boolean isKeywordFound = false;
+		LinkedList<String> foundTexts = new LinkedList<String>();
 
 		for(int i=0; i<tempLines.size(); i++) {
 			String text = tempLines.get(i);
 			if(text.contains(keyword)) {
 				int textIndex = i+1;
+				isKeywordFound = true;
 				System.out.printf(MESSAGE_SAVE_LINE_FORMAT, textIndex, text);
+				
+				foundTexts.add(text); // For Unit Testing Purpose
 			}
 		}
+		
+		if(!isKeywordFound) {
+			System.out.printf(MESSAGE_FIND_UNSUCCESSFUL, keyword);
+		}
+		
+		return foundTexts;
 	}
 
 	/**
