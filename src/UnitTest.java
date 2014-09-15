@@ -93,5 +93,20 @@ public class UnitTest {
 		
 		assertEquals(test, textBuddy.findText("B"));
 	}
+	
+
+	
+	@Test
+	public void testFindBasic3() { // Text not found
+		
+		TextBuddy textBuddy = new TextBuddy(new String[0]);
+		textBuddy.addText("A");
+		textBuddy.addText("B");
+		textBuddy.addText("C");
+		
+		LinkedList<String> test = new LinkedList<String>();
+		
+		assertEquals(test, textBuddy.findText("D"));
+	}
 
 }
