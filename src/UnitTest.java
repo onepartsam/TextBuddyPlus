@@ -43,5 +43,30 @@ public class UnitTest {
 		
 		assertEquals(test, textBuddy.getTexts());
 	}
+	
+	@Test
+	public void testSortExpert() {
+		
+		TextBuddy textBuddy = new TextBuddy(new String[0]);
+		
+		textBuddy.addText("Speak at a business, tech, leadership, or web conference.");
+		textBuddy.addText("Write and publish an ebook.");
+		textBuddy.addText("Own a piece of art from an artist I admire.");
+		textBuddy.addText("Attend a rave party.");
+		textBuddy.addText("Hire my first intern.");
+		textBuddy.addText("Start a product-based company.");
+		
+		textBuddy.sortTexts();
+		
+		LinkedList<String> test = new LinkedList<String>();
+		test.add("Attend a rave party.");
+		test.add("Hire my first intern.");
+		test.add("Own a piece of art from an artist I admire.");
+		test.add("Speak at a business, tech, leadership, or web conference.");
+		test.add("Start a product-based company.");
+		test.add("Write and publish an ebook.");
+		
+		assertEquals(test, textBuddy.getTexts());
+	}
 
 }
