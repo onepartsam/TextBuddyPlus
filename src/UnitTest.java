@@ -69,7 +69,6 @@ public class UnitTest {
 		assertEquals(test, textBuddy.getTexts());
 	}
 	
-	
 	@Test
 	public void testFindBasic() {
 		
@@ -94,8 +93,6 @@ public class UnitTest {
 		assertEquals(test, textBuddy.findText("B"));
 	}
 	
-
-	
 	@Test
 	public void testFindBasic3() { // Text not found
 		
@@ -108,8 +105,6 @@ public class UnitTest {
 		
 		assertEquals(test, textBuddy.findText("D"));
 	}
-	
-
 	
 	@Test
 	public void testFindAdvance() {
@@ -127,6 +122,27 @@ public class UnitTest {
 		test.add("Jason");
 		
 		assertEquals(test, textBuddy.findText("a"));
+	}
+	
+	@Test
+	public void testFindExpert() {
+		
+		TextBuddy textBuddy = new TextBuddy(new String[0]);
+		textBuddy.addText("Speak at a business, tech, leadership, or web conference.");
+		textBuddy.addText("Write and publish an ebook.");
+		textBuddy.addText("Own a piece of art from an artist I admire.");
+		textBuddy.addText("Attend a rave party.");
+		textBuddy.addText("Hire my first intern.");
+		textBuddy.addText("Start a product-based company.");
+		
+		LinkedList<String> test = new LinkedList<String>();
+		test.add("Speak at a business, tech, leadership, or web conference.");
+		test.add("Write and publish an ebook.");
+		test.add("Own a piece of art from an artist I admire.");
+		test.add("Attend a rave party.");
+		test.add("Start a product-based company.");
+		
+		assertEquals(test, textBuddy.findText(" a "));
 	}
 
 }
